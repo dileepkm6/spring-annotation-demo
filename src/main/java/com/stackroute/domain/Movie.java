@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component("movie")
 //default name of bean is firstLetter is small of class name
-public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware
+public class Movie
 {
     @Autowired
     private Actor actor;
@@ -21,27 +21,5 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         System.out.println("Name   : "+actor.getName());
         System.out.println("Gender : "+actor.getGender());
         System.out.println("Age    : "+actor.getAge());
-    }
-
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException
-    {
-        System.out.println("Using beanfactoryaware...");
-        Movie movie=beanFactory.getBean("movie",Movie.class);
-        movie.actorInfo();
-    }
-
-    @Override
-    public void setBeanName(String beanName)
-    {
-        System.out.println("beanName :"+beanName);
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException
-    {
-        System.out.println("Using applicationcontextaware...");
-        Movie m=applicationContext.getBean("movie",Movie.class);
-        m.actorInfo();
     }
 }
