@@ -8,10 +8,10 @@ public class Application
     public static void main( String[] args )
     {
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
-        Movie movieA=context.getBean("movieBean",Movie.class);
-        Movie movieB=context.getBean("movieBean",Movie.class);
-        //movie.actorInfo();
+        Movie movieA=context.getBean("movieA",Movie.class);
+        Movie movieB=context.getBean("movieB",Movie.class);
         System.out.println(movieA==movieB);
+        movieA.actorInfo();
         context.close();
     }
 }

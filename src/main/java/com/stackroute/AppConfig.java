@@ -17,8 +17,8 @@ public class AppConfig
         return new Actor("Aman","Male",23);
 
     }
-    @Bean
-    @Scope(value = "singleton")
+    @Bean({"movieA","movieB"})
+    @Scope(value = "prototype")
     public Movie movieBean()
     {
 
