@@ -6,11 +6,12 @@ import org.springframework.stereotype.Component;
 @Component("actor")
 public class Actor
 {
-    @Value("Aman")
+    //setting properties with .properties file
+    @Value("${Actor.name}")
     private String name;
-    @Value("Male")
+    @Value("${Actor.gender}")
     private String gender;
-    @Value("23")
+    @Value("${Actor.age}")
     private int age;
 
 
