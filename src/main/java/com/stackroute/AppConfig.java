@@ -13,17 +13,13 @@ public class AppConfig
     @Bean
     public Actor actorBean()
     {
-        Actor actor=new Actor();
-        actor.setName("Aman Bhadani");
-        actor.setGender("male");
-        actor.setAge(23);
-        return actor;
+        return new Actor("Aman","Male",23);
+
     }
     @Bean
     public Movie movieBean()
     {
-        Movie movie=new Movie();
-        movie.setActor(actorBean());
-        return movie;
+
+        return new Movie(actorBean());
     }
 }

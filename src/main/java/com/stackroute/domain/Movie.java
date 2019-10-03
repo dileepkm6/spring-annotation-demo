@@ -9,9 +9,10 @@ public class Movie
         return actor;
     }
 
-    public void setActor(Actor actor) {
+    public Movie(Actor actor) {
         this.actor = actor;
     }
+
     public void actorInfo()
     {
         System.out.println("Name   : "+actor.getName());
